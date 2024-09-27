@@ -13,6 +13,7 @@ import {Context} from '../context/AuthContext'
 
 function Register() {
   const navigate = useNavigate()
+  
   const [isLoading,setIsLoading]=useState(false)
   const {token,setToken}=useContext(Context)
 
