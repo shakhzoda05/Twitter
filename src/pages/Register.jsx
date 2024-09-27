@@ -1,31 +1,42 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Logo from '../assets/images/twitter-logo.svg'
 import LoginInput from '../components/LoginInput'
 import Button from '../components/Button'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import LoadingIcon from '../assets/images/loading.png'
 import toast from 'react-hot-toast'
 import toas,{Toaster} from 'react-hot-toast'
+import {Context} from '../context/AuthContext'
+
 
 
 
 function Register() {
+  const navigate = useNavigate()
   const [isLoading,setIsLoading]=useState(false)
+  const {token,setToken}=useContext(Context)
 
-  function handleRegisterSubmit(e){
-    e.preventDefault()
-  const data={
-    name:e.target.name.value,
-    phone:e.target.tel.value
+  function handleRegisterSubmit(e) {
+    e.preventDefault();
+    const data = {
+      name: e.target.login.value, // Change 'name' to 'login'
+      phone: e.target.tel.value
+    };
+    setIsLoading(true);
+    toast.success("Successfully registered:)");
+    setTimeout(() => {
+      setToken(data);
+      navigate("/");
+    }, 1000);
   }
-} 
+  
   return (
        <form onSubmit={handleRegisterSubmit} className='w-[670px] mx-auto mt-[60px]' autoComplete='off'>
       <Toaster position="top-center"reverseOrder={false}/>
       <img className='mx-auto' src={Logo} alt='image' width={40} height={30}/>
       <h2 className='text-[30px] leading-[39px] font-bold my-[35px]'>Create an account</h2>
       <LoginInput placeholder={"Name"} name={"login"} type={"text"} extraStyle={"mb-[25px]"}/>
-      <LoginInput placeholder={"Phone number"} name={"password"} type={"tel"} extraStyle={"mb-[25px]"}/>
+      <LoginInput placeholder={"Phone number"} name={"tel"} type={"tel"} extraStyle={"mb-[25px]"}/>
     
       <div className='mt-10'>
          <h3 className='text-[18px] font-bold leading-[23px] mb-[10px]'>Date of birth</h3>

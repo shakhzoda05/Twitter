@@ -21,9 +21,11 @@ function handleLoginSubmit(e){
     password:e.target.password.value
   }
   if(data.login=="Shaxzoda" && data.password=="777"){
+    setIsLoading(true)
     toast.success("Welcome to Twitter "+data.login)
-setIsLoading(true)
-setTimeout(()=>setToken(data),3000)
+    setToken([data])
+setTimeout(()=>setToken([data]),3000)
+console.log(token)
   }
   else{
     setIsLoading(true)
