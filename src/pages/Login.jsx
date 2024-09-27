@@ -23,7 +23,14 @@ function handleLoginSubmit(e){
   if(data.login=="Shaxzoda" && data.password=="777"){
     toast.success("Welcome to Twitter "+data.login)
 setIsLoading(true)
-setTimeout(()=>setToken(data),1000)
+setTimeout(()=>setToken(data),3000)
+  }
+  else{
+    setIsLoading(true)
+    setTimeout(()=>{
+      toast.error("User is not found, try again later!")
+      setIsLoading(false)
+    },2000)
   }
 }
   return (
