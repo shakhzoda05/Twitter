@@ -20,11 +20,11 @@ function Register() {
   function handleRegisterSubmit(e) {
     e.preventDefault();
     const data = {
-      name: e.target.login.value, // Change 'name' to 'login'
+      name: e.target.login.value, 
       phone: e.target.tel.value
     };
     setIsLoading(true);
-    toast.success("Successfully registered:)");
+    toast.success("Successfully registered!");
     setTimeout(() => {
       setToken(data);
       navigate("/");
