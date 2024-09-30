@@ -62,7 +62,7 @@ function Navbar() {
 
 
   return (
-    <div className='w-[25%] relative  h-[100vh] overflow-y-auto pt-[31px] pl-[70px] pr-[16px]'>
+    <div className='w-[25%] border-r-[1px] border-[#D7D8D8] relative  h-[100vh] overflow-y-auto pt-[31px] pl-[70px] pr-[16px]'>
     <Link to={"/"}>
     <img src={Logo} alt='img' width={40} height={33}/>
     </Link>
@@ -77,7 +77,7 @@ function Navbar() {
         <Button type={"button"} extraStyle={"py-[15px] w-[230px] mt-[30px]"}>Tweet</Button>
         <div className='flex items-center space-x-[10px] absolute bottom-1'>
            <img className='rounded-full' src={EmptyFoto} alt='img' width={50} height={50}/>
-           <div className='flex items-center justify-between space-x-[42px] w-[80%]'>
+           <div className='flex items-center justify-between space-x-[30px] w-[80%]'>
             <div>
                 <strong className='font-semibold text-[16px]'>Shakhzoda</strong>
                 <p className='text-[16px] opasity-60'>ShakhzodaDev@gmail.com</p>
