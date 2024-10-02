@@ -71,10 +71,10 @@ function Navbar() {
             <NavLink className={"flex items-center font-semibold text-[18px] leading-[23px] space-x-5"} key={item.id} to={item.path}>
                 {item.icon}
                 <span>{item.title}</span>
-            </NavLink>
+            </NavLink> 
         ))}
     </div>
-        <Button type={"button"} extraStyle={"py-[15px] w-[230px] mt-[30px]"}>Tweet</Button>
+        <Button type={"button"} extraStyle={"py-[15px] w-[200px] mt-[30px]"}>Tweet</Button>
         <div className='flex items-center space-x-[10px] absolute bottom-1'>
            <img className='rounded-full' src={EmptyFoto} alt='img' width={50} height={50}/>
            <div className='flex items-center justify-between space-x-[30px] w-[80%]'>
@@ -90,5 +90,5 @@ function Navbar() {
     </div>
   )
 }
-
 export default Navbar
+
